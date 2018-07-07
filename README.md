@@ -17,6 +17,6 @@ include:
 
 6.KMP algorithm(simple and so beautiful,just let me feel like a fool,I think everyone shoud learn it)
 
-7.BinaryTree(deletTree is hard for me,I need more prictice)
+7.BinaryTree(deletTree is hard for me,I need more prictice.PS,Reverse BinaryTree,so easy...)
 
 continue learning......
