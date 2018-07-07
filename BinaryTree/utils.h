@@ -27,11 +27,13 @@ public:
 	Leaf* Find(int num);
     void DestroyTree();
     int Size();
+    void ReverseTree();
 
 private:
     int size;
 	Leaf *root;
     void Destroy(Leaf *l);
+    void Reverse(Leaf *l);
 	void PrintFromMin(Leaf *l);
 	void PrintFromMax(Leaf *l);
 };

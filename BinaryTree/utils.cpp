@@ -220,3 +220,20 @@ void Tree::Destroy(Leaf *l){
     Destroy(l->right);
     free(l);
 }
+
+void Tree::ReverseTree(){
+    Reverse(root);
+}
+
+void Tree::Reverse(Leaf *l){
+    if(l==NULL){
+        return;
+    }
+    
+    Leaf *p=l->left;
+    l->left=l->right;
+    l->right=p;
+    
+    Reverse(l->left);
+    Reverse(l->right);
+}
