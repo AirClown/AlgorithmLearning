@@ -1,6 +1,7 @@
 #include"utils.h"
 
 Tree::Tree() {
+    size=0;
 	root = (Leaf *)malloc(sizeof(Leaf));
 	root->num = -1;
     root->count=0;
@@ -10,7 +11,6 @@ Tree::Tree() {
 }
 
 void Tree::InsertTree(int num) {
-    
     Leaf *l=Find(num);
     
     if(l==NULL){
@@ -50,6 +50,8 @@ void Tree::InsertTree(int num) {
     }else{
         l->count++;
     }
+    
+    size++;
 }
 
 void Tree::PrintTree(int sign) {
@@ -199,4 +201,22 @@ void Tree::DeletTree(int num) {
         DeletTree(p->num);
         l->num=n;
     }
+}
+
+int Tree::Size(){
+    return size;
+}
+
+void Tree::DestroyTree(){
+    Destroy(root);
+}
+
+void Tree::Destroy(Leaf *l){
+    if(l==NULL){
+        return;
+    }
+    
+    Destroy(l->left);
+    Destroy(l->right);
+    free(l);
 }

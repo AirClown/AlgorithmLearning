@@ -25,10 +25,13 @@ public:
 	Leaf* FindMax();
 	Leaf* FindMin();
 	Leaf* Find(int num);
-	void DestroyTree();
+    void DestroyTree();
+    int Size();
 
 private:
+    int size;
 	Leaf *root;
+    void Destroy(Leaf *l);
 	void PrintFromMin(Leaf *l);
 	void PrintFromMax(Leaf *l);
 };

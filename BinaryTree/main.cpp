@@ -1,11 +1,3 @@
-//
-//  main.cpp
-//  BinaryTree
-//
-//  Created by LiteShare on 2018/7/7.
-//  Copyright © 2018年 Luojuan. All rights reserved.
-//
-
 #include <iostream>
 #include "utils.h"
 
@@ -37,5 +29,7 @@ int main(int argc, const char * argv[]) {
         tree.DeletTree(i);
         tree.PrintTree(MinToMax);
     }
+    
+    tree.DestroyTree();
     return 0;
 }
