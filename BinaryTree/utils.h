@@ -25,6 +25,7 @@ public:
 	Leaf* FindMax();
 	Leaf* FindMin();
 	Leaf* Find(int num);
+	void DestroyTree();
 
 private:
 	Leaf *root;
