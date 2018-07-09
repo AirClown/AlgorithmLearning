@@ -19,6 +19,6 @@ include:
 
 7.BinaryTree(deletTree is hard for me,I need more prictice.PS,Reverse BinaryTree,so easy...)
 
-8.kruskal Algorithm(find smallest tree)
+8.Prim Algorithm(find smallest tree)
 
 continue learning......
