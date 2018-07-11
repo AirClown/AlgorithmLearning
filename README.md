@@ -27,4 +27,6 @@ include:
 
 11.Eight Queens
 
+12.Joseph Problem(good problem!)
+
 continue learning......
