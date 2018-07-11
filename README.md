@@ -1,7 +1,7 @@
 # AlgorithmLearning
 This is my learning record.
 
-used c
+used c++
 
 include:
 
@@ -24,5 +24,7 @@ include:
 9.BellmanFord Algorithm
 
 10.Floyd-warshall Algorithm
+
+11.Eight Queens
 
 continue learning......
