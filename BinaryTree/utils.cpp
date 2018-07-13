@@ -132,76 +132,115 @@ Leaf *Tree::Find(int num) {
 	return NULL;
 }
 
-void Tree::DeletTree(int num) {
-	Leaf *l=Find(num);
-    
-    if(l==NULL){
-        return;
-    }
-    
-    if(l->left==NULL&&l->right==NULL){
-        Leaf *parent=l->parent;
-        
-        if(parent==NULL){
-            l->count=0;
-            l->num=-1;
-            return;
-        }
-        
-        if(l==parent->left){
-            parent->left=NULL;
-        }else{
-            parent->right=NULL;
-        }
-        
-        free(l);
-    }else if(l->left==NULL){
-        Leaf *parent=l->parent;
-        if(parent==NULL){
-            l->count=0;
-            l->num=-1;
-            return;
-        }
-        
-        if(l==parent->left){
-            parent->left=l->right;
-            l->right->parent=parent;
-        }else{
-            parent->right=l->right;
-            l->right->parent=parent;
-        }
-        
-        free(l);
-    }else if(l->right==NULL){
-        Leaf *parent=l->parent;
-        if(parent==NULL){
-            l->count=0;
-            l->num=-1;
-            return;
-        }
-        
-        if(l==parent->left){
-            parent->left=l->left;
-            l->right->parent=parent;
-        }else{
-            parent->right=l->left;
-            l->right->parent=parent;
-        }
-        
-        free(l);
-    }else{
-        Leaf *p=l->right;
-        
-        while(p->left!=NULL){
-            p=p->left;
-        }
-        
-        l->count=p->count;
-        int n=p->num;
-        DeletTree(p->num);
-        l->num=n;
-    }
+void Tree::DeletTree(int num){
+    root=Delet(num, root);
 }
+
+Leaf* Tree::Delet(int num, Leaf *l){
+    if(l==NULL){
+        return NULL;
+    }else if(num<l->num){
+        l->left=Delet(num, l->left);
+    }else if(num>l->num){
+        l->right=Delet(num, l->right);
+    }else if(num==l->num){
+        if(l->right!=NULL&&l->left!=NULL){
+            Leaf* p=l->right;
+            
+            while(p->left==NULL){
+                p=p->left;
+            }
+            
+            l->num=p->num;
+            l->count=p->count;
+            Delet(p->num, l->right);
+        }else{
+            if(l->right==NULL&&l->left==NULL){
+                free(l);
+                return NULL;
+            }else{
+                Leaf* p=l;
+                l=l->left==NULL?l->right:l->left;
+                free(p);
+            }
+        }
+    }
+    
+    return l;
+}
+
+
+
+//void Tree::DeletTree(int num) {
+//    Leaf *l=Find(num);
+//
+//    if(l==NULL){
+//        return;
+//    }
+//
+//    if(l->left==NULL&&l->right==NULL){
+//        Leaf *parent=l->parent;
+//
+//        if(parent==NULL){
+//            l->count=0;
+//            l->num=-1;
+//            return;
+//        }
+//
+//        if(l==parent->left){
+//            parent->left=NULL;
+//        }else{
+//            parent->right=NULL;
+//        }
+//
+//        free(l);
+//    }else if(l->left==NULL){
+//        Leaf *parent=l->parent;
+//        if(parent==NULL){
+//            l->count=0;
+//            l->num=-1;
+//            return;
+//        }
+//
+//        if(l==parent->left){
+//            parent->left=l->right;
+//            l->right->parent=parent;
+//        }else{
+//            parent->right=l->right;
+//            l->right->parent=parent;
+//        }
+//
+//        free(l);
+//    }else if(l->right==NULL){
+//        Leaf *parent=l->parent;
+//        if(parent==NULL){
+//            l->count=0;
+//            l->num=-1;
+//            return;
+//        }
+//
+//        if(l==parent->left){
+//            parent->left=l->left;
+//            l->right->parent=parent;
+//        }else{
+//            parent->right=l->left;
+//            l->right->parent=parent;
+//        }
+//
+//        free(l);
+//    }else{
+//        Leaf *p=l->right;
+//
+//        while(p->left!=NULL){
+//            p=p->left;
+//        }
+//
+//        l->count=p->count;
+//        int n=p->num;
+//        DeletTree(p->num);
+//        l->num=n;
+//    }
+//}
 
 int Tree::Size(){
     return size;

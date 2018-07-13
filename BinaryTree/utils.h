@@ -32,6 +32,7 @@ public:
 private:
     int size;
 	Leaf *root;
+    Leaf *Delet(int num,Leaf* l);
     void Destroy(Leaf *l);
     void Reverse(Leaf *l);
 	void PrintFromMin(Leaf *l);
