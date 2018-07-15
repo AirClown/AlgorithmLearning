@@ -31,4 +31,6 @@ include:
 
 13.AVL Tree(more complex than Binary Tree)
 
+14.Fast Sort(include two method,two_divide,tree_divide)
+
 continue learning......
