@@ -35,6 +35,6 @@ include:
 
 15.RBTree(very hard,especially the delete...need more practice)
 
-16.String matching algorithm（include RS algorithm,,,）
+16.String matching algorithm（include RK algorithm,,,）
 
 continue learning......
