@@ -1,13 +1,13 @@
 # AlgorithmLearning
 This is my learning record.
 
-used c++
+used c/c++
 
 include:
 
 1.A* algorithm
 
-2.Merging sort
+2.Merging sort(two ways to realize,recursion, circulation)
 
 3.Dijkstra algorithm
 
