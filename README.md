@@ -37,4 +37,6 @@ include:
 
 16.String matching algorithm（include RK algorithm,,,）
 
+17.realise sqrt(use Newton's method)
+
 continue learning......
