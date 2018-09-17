@@ -39,4 +39,6 @@ include:
 
 17.realise sqrt(use Newton's method)
 
+18.BitCalculate （use bit operation to realize addition and subtraction）
+
 continue learning......
