@@ -1,7 +1,7 @@
 # AlgorithmLearning
-This is my learning record.
+## This is my learning record.
 
-used c/c++
+used c/c++/java
 
 include:
 
@@ -40,5 +40,7 @@ include:
 17.realise sqrt(use Newton's method)
 
 18.BitCalculate （use bit operation to realize addition and subtraction）
+
+19.k-means 
 
 continue learning......
